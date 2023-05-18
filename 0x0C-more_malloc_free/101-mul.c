@@ -53,7 +53,7 @@ void errors(void)
 }
 
 /**
-  * main - multiples two positive numbers
+  * main - multiplies two positive numbers
   * @argc: number of arguments
   * @argv: array of arguments
   *
@@ -68,8 +68,8 @@ int main(int argc, char *argv[])
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		errors();
-	len1 = strlen(s1);
-	len2 = strlen(s2);
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
 	len = len1 + len2 + 1;
 	result = malloc(sizeof(int) * len);
 	if (!result)
