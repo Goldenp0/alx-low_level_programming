@@ -3,16 +3,17 @@
 
 /**
   * main - prints its own opcodes
-  * @argc: number of arguments
-  * @argv: array of arguments
+  * @argc: The number of arguments
+  * @argv: An array of pointer to the arguments
   *
   * Return: Always 0 (Success)
   */
 
 int main(int argc, char *argv[])
 {
-	int bytes, r;
-	char *arr;
+	int bytes, i;
+	int (*address)(int, char **) = main;
+	unsigned char opcode;
 
 	if (argc != 2)
 	{
@@ -28,17 +29,19 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	arr = (char *)main;
-
-	for (r = 0; r < bytes; r++)
+	for (i = 0; i < bytes; i++)
 	{
-		if (r == bytes - 1)
-		{
-			printf("%02hhx\n", arr[r]);
-			break;
-		}
+		opcode = *(unsigned char *)address;
+		printf("%.2x", opcode);
 
-		printf("%02hhx", arr[r]);
+		if (i == bytes - 1)
+			continue;
+		printf(" ");
+
+		address++;
 	}
+
+	printf("\n");
+
 	return (0);
 }
