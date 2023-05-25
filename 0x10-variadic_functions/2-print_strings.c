@@ -1,4 +1,4 @@
-#include "variadic_function.h"
+#include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -13,7 +13,7 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list string;
+	va_list strings;
 	char *str;
 	unsigned int index;
 
@@ -28,11 +28,11 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		else
 			printf("%s", str);
 
-		if (index != (n - 1) && separatot != NULL)
+		if (index != (n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
 
-	print("\n");
+	printf("\n");
 
 	va_end(strings);
 }
