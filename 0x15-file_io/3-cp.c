@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exi(97);
+		exit(97);
 
 	}
 
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 		x = read(from, buffer, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (r > 0);
+	} while (x > 0);
 
 	free(buffer);
 	close_file(from);
