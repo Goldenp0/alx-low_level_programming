@@ -54,7 +54,7 @@ void print_magic(unsigned char *e_ident)
 		if (index == EI_NIDENT - 1)
 			printf("\n");
 		else
-			print (" ");
+			printf(" ");
 	}
 }
 
@@ -95,7 +95,7 @@ void print_data(unsigned char *e_ident)
 		case ELFDATANONE:
 			printf("none\n");
 			break;
-		case ELF DATA2LSB:
+		case ELFDATA2LSB:
 			printf("2's complement, little endian\n");
 			break;
 		case ELFDATA2MSB:
